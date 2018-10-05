@@ -11,5 +11,5 @@ const stories = storiesOf('PatchChat', module);
 stories.addDecorator(withKnobs);
 
 stories.add('Interactive', () => (
-  <PatchChat titel={text('Title', 'PatchChat')} />
+  <PatchChat title={text('Title', 'PatchChat')} />
 ));
