@@ -1,5 +1,5 @@
 // @flow
 
-import Message from './PatchChat';
+import PatchChat from './PatchChat';
 
-export default Message
+export default PatchChat;

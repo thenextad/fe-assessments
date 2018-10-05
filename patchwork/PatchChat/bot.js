@@ -1,9 +1,9 @@
 // @flow
 
-import * as R from 'ramda';
+import {isEmpty} from 'ramda';
 
 type List = Array<string>;
-type Callback = any => any;
+type Callback = (?Error, string) => any;
 
 const MESSAGES = [
   'I am a king',
@@ -15,10 +15,15 @@ const MESSAGES = [
 ];
 const USERS = ['Steve', 'Vincent', 'Draco', 'Mr T'];
 
-// Fuction to get a random item from a list
+// Function to get a random item from a list
 const random = (list: List) =>
-  list.splice(Math.ceil(Math.random() * list.length), 1);
+  list.splice(Math.floor(Math.random() * list.length), 1)[0];
 
 export const chatBot = (cb: Callback): void => {
-  setInterval(cb({user: random(MESSAGES), text: random(USERS)}), 3000);
+  let timer = setInterval(() => {
+    cb({user: random(USERS), text: random(MESSAGES)});
+    if (isEmpty(USERS) || isEmpty(MESSAGES)) {
+      clearInterval(timer);
+    }
+  }, 3000);
 };

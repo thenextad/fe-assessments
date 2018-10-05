@@ -1,45 +1,57 @@
+//colors
+$white: white;
+$black_5: rgba(0, 0, 0, 0.05);
+$color_grey_approx: #ccc;
+$color_jade_approx: #58aa80;
+$color_deep_green: #63c091;
+$color_grey_40: #666666;
+$color_white_smoke: #f1f1f1;
+
+//fonts
+$font_0: Arial;
+$font_1: Helvetica Neue;
+$font_2: Helvetica;
+$font_3: sans-serif;
+
 .patchChat {
-  background: white;
+  background: $white;
   padding: 10px;
   border-radius: 3px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  box-shadow: 0 3px 10px $black_5;
+  font-family: $font_0, $font_1, $font_2, $font_3;
   font-size: 16px;
-
-  h2 {
-    color: #666666;
-  }
-
-  input {
-    background: white;
-    border: 1px solid #ccc;
-    height: 32px;
-    padding: 0 5px;
-    border-radius: 3px;
-    font-size: 16px;
-  }
 }
 
+h2 {
+  color: $color_grey_40;
+}
+
+input {
+  background: $white;
+  border: 1px solid $color_grey_approx;
+  height: 32px;
+  padding: 0 5px;
+  border-radius: 3px;
+  font-size: 16px;
+}
 button {
-  border: 1px solid #58aa80;
-  background: #63c091;
+  border: 1px solid $color_jade_approx;
+  background: $color_deep_green;
   padding: 0 10px;
   border-radius: 3px;
   height: 32px;
   margin-left: 10px;
-  color: white;
+  color: $white;
   font-size: 1rem;
 }
-
 .messages {
   padding: 10px;
-  background: #f1f1f1;
+  background: $color_white_smoke;
   border-radius: 3px;
   margin-bottom: 20px;
   height: 300px;
   overflow: auto;
 }
-
 .message {
   margin-bottom: 10px;
 }
